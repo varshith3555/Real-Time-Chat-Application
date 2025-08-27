@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Glowing background -->
+  <circle cx="16" cy="16" r="14" fill="url(#gradient-bg)" filter="url(#glow)"/>
+  
+  <!-- Rocket -->
+  <path d="M16 6C13.2 6 10 7.2 8.4 11.4C7.6 13.4 7.2 15.8 7 17.6L11 15.6C11.4 15.4 11.8 15.2 12.2 15.2C13 15.2 13.6 15.8 13.6 16.6V20.6L15.6 24.6C17.4 24.4 19.8 24 21.8 23.2C26 21.6 27.2 18.4 27.2 15.6C27.2 12.8 26 9.6 21.8 8C20.2 7.4 18.4 7 16.8 7C16.6 7 16.2 6.8 16 6Z" 
+        fill="white" filter="url(#inner-glow)"/>
+  
+  <!-- Thrust -->
+  <path d="M13.6 20.6L12.2 22C11.8 22.4 11.8 23 12.2 23.4L13 24.2C13.4 24.6 14 24.6 14.4 24.2L15.8 22.8" 
+        fill="url(#gradient-thrust)" filter="url(#blur)"/>
+  
+  <!-- Definitions -->
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="gradient-bg" x1="0" y1="0" x2="32" y2="32">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="50%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    
+    <!-- Thrust gradient -->
+    <linearGradient id="gradient-thrust" x1="16" y1="20" x2="12" y2="24">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Inner glow -->
+    <filter id="inner-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    
+    <!-- Blur effect -->
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="0.5"/>
+    </filter>
+  </defs>
+</svg> 
